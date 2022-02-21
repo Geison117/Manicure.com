@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block titulo %} Listado de Contacto {% endblock titulo %}</title>
+</head>
+<body>
+{% block cuerpo %}
+<table border="2">
+  <thead>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Correo</th>
+    <th>Opción</th>
+  </thead>
+  <tbody>
+  {% for persona in object_list %}
+  <tr>
+    <td> {{ persona.nombre }}</td>
+    <td> {{ persona.apellido }}</td>
+    <td> {{ persona.correo }}</td>
+    <td> <a href="{% url 'editar_persona' persona.id %}">Editar</a> <a  href="{% url 'eliminar_persona' persona.id %}">Eliminar</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+
+</table>
+{% endblock cuerpo %}
+
+{% block boton %}
+<button ><a href="{% url 'crear_persona' %}">Crear</a></button>
+{% endblock boton %}
+</body>
+</html>
