@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, DeleteView, ListView, UpdateView #View
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView, TemplateView #View
 from django.urls import reverse_lazy
 from .forms import *
 from .models import *
 
+
 class ClienteList(ListView):
     model = Cliente
-    template_name = 'prueba.html'
+    template_name = 'login.html'
 
     def get_queryset(self):
         return self.model.objects.all()
@@ -14,13 +15,13 @@ class ClienteList(ListView):
 class ClienteCreate(CreateView):
     model = Cliente
     form_class = ClienteForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class ClienteUpdate(UpdateView):
     model = Cliente
     form_class = ClienteForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class ClienteDelete(DeleteView):
@@ -39,13 +40,13 @@ class PersonalList(ListView):
 class PersonalCreate(CreateView):
     model = Personal
     form_class = PersonalForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class PersonalUpdate(UpdateView):
     model = Personal
     form_class = PersonalForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class PersonalDelete(DeleteView):
@@ -64,13 +65,13 @@ class ServicioList(ListView):
 class ServicioCreate(CreateView):
     model = Servicio
     form_class = ServicioForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class ServicioUpdate(UpdateView):
     model = Servicio
     form_class = ServicioForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class ServicioDelete(DeleteView):
@@ -89,13 +90,13 @@ class ProductoList(ListView):
 class ProductoCreate(CreateView):
     model = Producto
     form_class = ProductoForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class ProductoUpdate(UpdateView):
     model = Producto
     form_class = ProductoForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class ProductoDelete(DeleteView):
@@ -114,13 +115,13 @@ class FacturaList(ListView):
 class FacturaCreate(CreateView):
     model = Factura
     form_class = FacturaForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class FacturaUpdate(UpdateView):
     model = Factura
     form_class = FacturaForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class FacturaDelete(DeleteView):
@@ -139,13 +140,13 @@ class CitaList(ListView):
 class CitaCreate(CreateView):
     model = Cita
     form_class = CitaForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class CitaUpdate(UpdateView):
     model = Cita
     form_class = CitaForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class CitaDelete(DeleteView):
@@ -164,13 +165,13 @@ class Servicio_CitaList(ListView):
 class Servicio_CitaCreate(CreateView):
     model = Servicio_Cita
     form_class = Servicio_CitaForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class Servicio_CitaUpdate(UpdateView):
     model = Servicio_Cita
     form_class = Servicio_CitaForm
-    template_name = 'crear_persona.html'
+    template_name = 'crear.html'
     success_url = reverse_lazy('index')
 
 class Servicio_CitaDelete(DeleteView):

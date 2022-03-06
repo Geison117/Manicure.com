@@ -1,9 +1,17 @@
+import password as password
 from django import forms
-from .models import Cliente
+from .models import *
+
+
+class LoginFormC(forms.ModelForm):
+    class Meta:
+        model = Cliente
+        fields = ['correo', 'passwd']
+
 
 class ClienteForm(forms.ModelForm):
      class Meta:
-         model=Cliente
+         model= Cliente
          fields = '__all__'
 
 class PersonalForm(forms.ModelForm):
