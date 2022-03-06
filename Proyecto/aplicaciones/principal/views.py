@@ -18,7 +18,7 @@ def inicio(request):
 #     contexto = {
 #         'form': form
 #     }
-#     return render(request, 'sesion.html', contexto)
+#     return render(request, 'cliente.html', contexto)
 #
 # def editarPersona(request, id):
 #     persona = Persona.objects.get(id = id)
@@ -32,7 +32,7 @@ def inicio(request):
 #     contexto = {
 #         'form': form
 #     }
-#     return render(request, 'sesion.html', contexto)
+#     return render(request, 'cliente.html', contexto)
 #
 # def eliminarPersona(request, id):
 #     persona = Persona.objects.get(id = id)
