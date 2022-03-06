@@ -15,16 +15,16 @@ class PersonaList(ListView):
 class PersonaCreate(CreateView):
     model = Persona
     form_class = PersonaForm
-    template_name = 'crear_persona.html'
+    template_name = 'sesion.html'
     success_url = reverse_lazy('index')
 
 class PersonaUpdate(UpdateView):
     model = Persona
     form_class = PersonaForm
-    template_name = 'crear_persona.html'
+    template_name = 'sesion.html'
     success_url = reverse_lazy('index')
 
 class PersonaDelete(DeleteView):
     model = Persona
-    template_name = 'verificacion.html'
+    template_name = 'home.html'
     success_url = reverse_lazy('index')

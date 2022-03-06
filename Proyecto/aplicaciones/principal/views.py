@@ -1,14 +1,9 @@
 from django.shortcuts import render, redirect
-from .models import Cliente
-# from .forms import PersonaForm
 # Create your views here.
 
-# def inicio(request):
-#     personas= Persona.objects.all() # select * from persona
-#     contexto = {
-#         'personas':personas
-#     }
-#     return render(request, 'index.html', contexto)
+
+def inicio(request):
+    return render(request, 'home.html')
 #
 # def crearPersona(request):
 #     if request.method == 'GET':
@@ -23,7 +18,7 @@ from .models import Cliente
 #     contexto = {
 #         'form': form
 #     }
-#     return render(request, 'crear_persona.html', contexto)
+#     return render(request, 'sesion.html', contexto)
 #
 # def editarPersona(request, id):
 #     persona = Persona.objects.get(id = id)
@@ -37,7 +32,7 @@ from .models import Cliente
 #     contexto = {
 #         'form': form
 #     }
-#     return render(request, 'crear_persona.html', contexto)
+#     return render(request, 'sesion.html', contexto)
 #
 # def eliminarPersona(request, id):
 #     persona = Persona.objects.get(id = id)
