@@ -1,49 +1,12 @@
-import password as password
-from django import forms
-from .models import *
+#import password as password
+
+from django.contrib.auth.forms import AuthenticationForm
 
 
-class LoginFormC(forms.ModelForm):
-    class Meta:
-        model = Cliente
-        fields = ['correo', 'passwd']
-
-
-class ClienteForm(forms.ModelForm):
-     class Meta:
-         model= Cliente
-         fields = '__all__'
-
-class PersonalForm(forms.ModelForm):
-    class Meta:
-        model = Personal
-        fields = '__all__'
-
-
-class ServicioForm(forms.ModelForm):
-    class Meta:
-        model = Servicio
-        fields = '__all__'
-
-
-class ProductoForm(forms.ModelForm):
-    class Meta:
-        model = Producto
-        fields = '__all__'
-
-
-class FacturaForm(forms.ModelForm):
-    class Meta:
-        model = Factura
-        fields = '__all__'
-
-
-class CitaForm(forms.ModelForm):
-    class Meta:
-        model = Cita
-        fields = '__all__'
-
-class Servicio_CitaForm(forms.ModelForm):
-    class Meta:
-        model = Servicio_Cita
-        fields = '__all__'
+class FormularioLogin(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super(FormularioLogin, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs['class'] = 'form-control'
+        self.fields['username'].widget.attrs['placeholder'] = 'Nombre de usuario'
+        self.fields['password'].widget.attrs['class'] = 'form-control'
+        self.fields['password'].widget.attrs['placeholder'] = 'Contraseña'

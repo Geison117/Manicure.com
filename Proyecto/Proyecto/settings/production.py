@@ -17,10 +17,10 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'afdpxjwd',
-        'USER': 'afdpxjwd',
-        'PASSWORD': 'gC0HklelN2j8yLBW51YSr5TAhXcJAAsA',
-        'HOST': 'castor.db.elephantsql.com',
+        'NAME': 'tnjvcgxr',
+        'USER': 'tnjvcgxr',
+        'PASSWORD': 'ENQ5dAClZsa3Ib5IA2jmBbAhOf7O6B-A',
+        'HOST': 'jelani.db.elephantsql.com',
         'PORT': '' ,
     }
 }

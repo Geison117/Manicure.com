@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block sesion %}
+<a class="nav-link text-uppercase text-expanded" href="{% url 'login' %}">Bienvenido {{ cliente.nombre }} </a>
+{% endblock sesion %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Crear o Editar</button>
+</form>
+{% endblock content %}
