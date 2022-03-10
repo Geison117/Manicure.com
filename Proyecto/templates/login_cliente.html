@@ -7,7 +7,15 @@
 {% block content %}
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Crear o Editar</button>
+    <div class="container box login">
+
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-info">Iniciar sesion</button>
+
+    </div>
+
+
 </form>
 {% endblock content %}
