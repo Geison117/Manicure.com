@@ -103,10 +103,10 @@ class Factura(models.Model):
 
 
 class Cita(models.Model):
+    id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, null=True)
     id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     id_personal = models.ForeignKey(Personal, on_delete=models.CASCADE)
     fecha = models.DateTimeField()
-
 
 class Servicio_Cita(models.Model):
     id_cita = models.ForeignKey(Cita, on_delete=models.CASCADE)

@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, redirect
-
+from .forms import CitaForm
 
 from .models import Servicio
 
@@ -17,5 +17,14 @@ def agendar_cita(request):
     contexto = {
         'servicios': servicios
     }
-    print(servicios[0].foto.url)
     return render(request, 'servicios.html', contexto)
+
+
+def agendar_cita_seleccionada(request):
+
+    form = CitaForm()
+    contexto = {
+        'form':form
+    }
+
+    return render(request, 'agendar_cita.html', contexto)
