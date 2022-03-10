@@ -28,11 +28,11 @@
                     <input type="hidden" class="product-title-{{product.id}}" value="{{product.title}}"/>
                     {% if user.is_authenticated %}
                     <button class="btn btn-sm btn-success add-to-cart" data-index="{{product.id}}">
-                        Adquirir servicio
+                        Agendar cita
                     </button>
 
                     {% else %}
-                    <a class="btn btn-sm btn-primary" href="../login">Adquirir servicio</a>
+                    <a class="btn btn-sm btn-primary" href="../login">Agendar cita</a>
                     {% endif %}
                     <span class="float-right">
 			  		4.5/5

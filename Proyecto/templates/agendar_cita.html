@@ -3,12 +3,27 @@
 {% block sesion %}
 <a class="nav-link text-uppercase text-expanded" href="{% url 'login' %}">Bienvenido {{ cliente.nombre }} </a>
 {% endblock sesion %}
+<div class="container my-4">
 
-{% block content %}
 
+
+
+    {% block content %}
 <form method="post">
-    {{ form.as_p }}
-    <button type="submit">Agendar</button>
-</form>
+    {% csrf_token %}
+    <div class="container box login" style="width: 15%">
+        <h3 class="my-4 border-bottom pb-1" ><font color="black">Agendar cita</font></h3>
+        {% for field in form.visible_fields %}
+        <div class="my-4 form-group">
+            {{ field.label }} <br>
+            {{ field }}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-success">Agendar cita</button>
 
+    </div>
+
+
+</form>
+</div>
 {% endblock content %}
