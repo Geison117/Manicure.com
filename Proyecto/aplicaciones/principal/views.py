@@ -18,4 +18,4 @@ def agendar_cita(request):
         'servicios': servicios
     }
     print(servicios[0].foto.url)
-    return render(request, 'agendar_cita.html', contexto)
+    return render(request, 'servicios.html', contexto)
