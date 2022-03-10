@@ -9,7 +9,7 @@
 
 <main class="container my-4">
     <!-- Featured Products -->
-    <h3 class="my-4 border-bottom pb-1"><font color="white">Servicios</font></h3>
+    <h3 class="my-4 border-bottom pb-1"><font color="white">Productos</font></h3>
     <div class="row">
         {% for servicio in servicios %}
         <div class="col-md-3 mb-4">
@@ -20,7 +20,7 @@
                     <h6>$ <span class="">{{ servicio.precio }}</span></h6>
                 </div>
                 <div class="card-footer">
-
+					<!--{{servicio.id}}-->
                     <input type="hidden" value="1" class="form-control product-qty-{{product.id}}" id="productQty"/>
                     <input type="hidden" class="product-image-{{product.id}}"
                            value="{{product.productattribute_set.first.image}}"/>
@@ -28,11 +28,11 @@
                     <input type="hidden" class="product-title-{{product.id}}" value="{{product.title}}"/>
                     {% if user.is_authenticated %}
                     <button class="btn btn-sm btn-success add-to-cart" data-index="{{product.id}}">
-                        Adquirir servicio
+                        Comprar producto
                     </button>
 
                     {% else %}
-                    <a class="btn btn-sm btn-primary" href="../login">Adquirir servicio</a>
+                    <a class="btn btn-sm btn-primary" href="../login">Comprar producto</a>
                     {% endif %}
                     <span class="float-right">
 			  		4.5/5
