@@ -31,7 +31,7 @@ urlpatterns = [
     path('login/', Login.as_view(), name='login'),
     path('logout/', login_required(logoutUsuario), name='logout'),
     path('agendar_cita/', agendar_cita, name='agendar_cita'),
-    path('agendar_cita_seleccionada/', agendar_cita_seleccionada , name='agendar_cita_seleccionada'),
+    path('agendar_cita_seleccionada/<int:id_servicio>/', agendar_cita_seleccionada , name='agendar_cita_seleccionada'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

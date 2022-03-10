@@ -20,11 +20,27 @@ def agendar_cita(request):
     return render(request, 'servicios.html', contexto)
 
 
-def agendar_cita_seleccionada(request):
+def agendar_cita_seleccionada(request, id_servicio):
 
-    form = CitaForm()
-    contexto = {
-        'form':form
-    }
+    if request.method == 'GET':
+        args = [request.user.id, id_servicio]#Servicio.objects.get(id=id_servicio)]
+        form = CitaForm(initial ={'id_cliente':args[0], 'id_servicio':args[1]})
+
+        contexto = {
+            'form':form
+        }
+
+    if request.method == 'POST':
+        form = CitaForm(request.POST)
+        contexto = {
+            'form': form
+        }
+        if form.is_valid():
+            for f in form.fields.items():
+                print(f)
+            form.save()
+            return redirect('index')
 
     return render(request, 'agendar_cita.html', contexto)
+
+

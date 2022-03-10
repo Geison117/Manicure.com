@@ -16,15 +16,17 @@ class FormularioLogin(AuthenticationForm):
 class CitaForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(CitaForm, self).__init__(*args, **kwargs)
-
+        #id_cliente_id = forms.IntegerField(widget=forms.HiddenInput())
+        #id_servicio_id = forms.IntegerField(widget=forms.HiddenInput())
         # Definir campo como oculto
         self.fields['id_cliente'].widget = forms.HiddenInput()
+        self.fields['id_servicio'].widget = forms.HiddenInput()
 
-        # No existe instancia ni su pk, entonces est
+        #No existe instancia ni su pk, entonces est
         #if not self.instance.pk:
-        #    self.fields['estado'].initial = 'activo'
-
+        #self.fields['id_cliente'].initial = args[0]
+        #self.fields['id_servicio'].initial = args[1]
     class Meta:
         model = Cita
-        fields = '__all__'
+        fields = "__all__"
 
