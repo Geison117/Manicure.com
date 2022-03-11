@@ -5,31 +5,39 @@
 {% endblock sesion %}
 <div class="container my-4">
 
-{% block content %}
+    {% block content %}
     {% csrf_token %}
-<label for="basic-url" class="form-label">Nombres</label>
-<div class="input-group mb-3">
-{{ form.nombres }}
-</div>
 
-  <label for="basic-url" class="form-label">Apellidos</label>
-<div class="input-group mb-3">
-  {{ form.apellidos }}
-</div>
+    <div class="container box mb-4">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre</span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                   aria-describedby="basic-addon1" value="{{ form.nombres }}" disabled>
+        </div>
 
-<label for="basic-url" class="form-label">Correo</label>
-<div class="input-group mb-3">
-{{ form.email }}
-</div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Apellido</span>
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+                   aria-describedby="basic-addon2" value="{{ form.apellidos }}" disabled>
+        </div>
 
-<label for="basic-url" class="form-label">Teléfono</label>
-<div class="input-group mb-3">
-  {{ form.telefono }}
-</div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">@</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{ form.email }}" disabled>
+        </div>
 
+        <div class="input-group mb-3">
+            <span class="input-group-text">Telefono</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="{{ form.telefono }}" disabled>
+        </div>
 <a href="{%  url 'citas' %}">
 <button  class="btn btn-info">Ver citas</button>
 </a>
 
+        <a href="citas mt-4" >
+            <button class="btn btn-info">Ver citas</button>
+        </a>
+    </div>
 
-{% endblock content %}
+
+    {% endblock content %}
