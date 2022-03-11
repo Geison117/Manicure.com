@@ -34,6 +34,8 @@ urlpatterns = [
     path('agendar_cita_seleccionada/<int:id_servicio>/', agendar_cita_seleccionada , name='agendar_cita_seleccionada'),
     path('perfil/', mostrar_perfil, name='perfil'),
     path('citas/', mostrar_citas, name='citas'),
+    path('editar_perfil/', editar_perfil, name='editar_perfil'),
+    path('eliminar_cita/', eliminar_cita, name='eliminar_cita'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

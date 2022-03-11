@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
-
-from .models import Cita
+from .models import *
 
 
 class FormularioLogin(AuthenticationForm):
@@ -30,3 +29,11 @@ class CitaForm(forms.ModelForm):
     class Meta:
         model = Cita
         fields = "__all__"
+
+class ClienteForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(ClienteForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = Cliente
+        fields = ('nombres', 'email', 'telefono')

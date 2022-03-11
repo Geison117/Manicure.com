@@ -11,7 +11,7 @@
     <div class="container box mb-4">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Nombre</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+            <input type="text" class="form-control" placeholder="nombres" aria-label="nombres"
                    aria-describedby="basic-addon1" value="{{ form.nombres }}" disabled>
         </div>
 
@@ -30,14 +30,13 @@
             <span class="input-group-text">Telefono</span>
             <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="{{ form.telefono }}" disabled>
         </div>
-<a href="{%  url 'citas' %}">
-<button  class="btn btn-info">Ver citas</button>
-</a>
-
-        <a href="citas mt-4" >
-            <button class="btn btn-info">Ver citas</button>
+        <a href="{%  url 'citas' %}">
+        <button  class="btn btn-info">Ver citas</button>
         </a>
+
+         <a href="{%  url 'editar_perfil' %}">
+        <button  class="btn btn-info">Editar Perfil</button>
+        </a>
+
     </div>
-
-
     {% endblock content %}

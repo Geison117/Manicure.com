@@ -12,10 +12,12 @@
         <div class="form-group">
             {{ form.as_p }}
         </div>
-        <button type="submit" class="btn btn-info">Iniciar sesion</button>
 
+        {% if user.is_authenticated %}
+            <button type="submit" class="btn btn-info">Editar perfil</button>
+        {% else %}
+            <button type="submit" class="btn btn-info">Iniciar sesion</button>
+        {% endif %}
     </div>
-
-
 </form>
 {% endblock content %}

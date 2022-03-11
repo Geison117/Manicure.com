@@ -13,10 +13,14 @@ def inicio(request):
 
 
 def agendar_cita(request):
-    servicios = Servicio.objects.all()  # select * from persona
-    contexto = {
-        'servicios': servicios
-    }
+    if request.method == 'GET':
+        servicios = Servicio.objects.all()  # select * from persona
+        contexto = {
+            'servicios': servicios
+        }
+    #if request.method("POST"):
+
+
     return render(request, 'servicios.html', contexto)
 
 
@@ -55,8 +59,29 @@ def mostrar_perfil(request):
 def mostrar_citas(request):
     if request.method == 'GET':
         citas = Cita.objects.filter(id_cliente = request.user.id)
-        print(citas[0].id_cliente)
         contexto = {
             'citas': citas
         }
     return render(request, 'citas.html', contexto)
+
+def editar_perfil(request):
+    if request.method == 'GET':
+        form = ClienteForm(instance=request.user)
+        contexto = {
+            'form': form
+        }
+
+    if request.method == 'POST':
+        form = ClienteForm(request.POST, instance=request.user)
+        contexto = {
+            'form': form
+        }
+        if form.is_valid():
+            form.save()
+            return redirect("perfil")
+    return render(request, 'login_cliente.html', contexto)
+
+
+def eliminar_cita(request):
+    #request.user.delete()
+    return redirect('citas')
