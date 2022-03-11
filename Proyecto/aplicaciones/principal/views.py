@@ -1,8 +1,8 @@
 
 from django.shortcuts import render, redirect
-from .forms import CitaForm
+from .forms import *
 
-from .models import Servicio
+from .models import *
 
 
 # Create your views here.
@@ -35,12 +35,19 @@ def agendar_cita_seleccionada(request, id_servicio):
         contexto = {
             'form': form
         }
+        for f in form.fields.items():
+            print(f)
         if form.is_valid():
-            for f in form.fields.items():
-                print(f)
             form.save()
             return redirect('index')
 
     return render(request, 'agendar_cita.html', contexto)
 
 
+def mostrar_perfil(request):
+    if request.method == 'GET':
+        cliente = Cliente.objects.get(id = request.user.id)
+        contexto = {
+            'form': cliente
+        }
+    return render(request, 'mi_perfil.html', contexto)

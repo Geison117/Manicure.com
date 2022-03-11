@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block sesion %}
+<a class="nav-link text-uppercase text-expanded" href="{% url 'login' %}">Bienvenido {{ cliente.nombre }} </a>
+{% endblock sesion %}
+<div class="container my-4">
+
+{% block content %}
+    {% csrf_token %}
+<label for="basic-url" class="form-label">Nombres</label>
+<div class="input-group mb-3">
+{{ form.nombres }}
+</div>
+
+  <label for="basic-url" class="form-label">Apellidos</label>
+<div class="input-group mb-3">
+  {{ form.apellidos }}
+</div>
+
+<label for="basic-url" class="form-label">Correo</label>
+<div class="input-group mb-3">
+{{ form.email }}
+</div>
+
+<label for="basic-url" class="form-label">Teléfono</label>
+<div class="input-group mb-3">
+  {{ form.telefono }}
+</div>
+
+<a href="citas">
+<button  class="btn btn-info">Ver citas</button>
+</a>
+
+
+{% endblock content %}

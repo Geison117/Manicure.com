@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from aplicaciones.principal.views import inicio, agendar_cita, agendar_cita_seleccionada
+from aplicaciones.principal.views import *
 from aplicaciones.principal.class_view import Login, logoutUsuario
 from django.contrib.auth.decorators import login_required
 from django.conf.urls.static import static
@@ -32,6 +32,7 @@ urlpatterns = [
     path('logout/', login_required(logoutUsuario), name='logout'),
     path('agendar_cita/', agendar_cita, name='agendar_cita'),
     path('agendar_cita_seleccionada/<int:id_servicio>/', agendar_cita_seleccionada , name='agendar_cita_seleccionada'),
+    path('perfil/', mostrar_perfil, name='perfil'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
