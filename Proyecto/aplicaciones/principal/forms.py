@@ -20,18 +20,12 @@ class DateInput(forms.DateInput):
 class CitaForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(CitaForm, self).__init__(*args, **kwargs)
-        # id_cliente_id = forms.IntegerField(widget=forms.HiddenInput())
-        # id_servicio_id = forms.IntegerField(widget=forms.HiddenInput())
-        # Definir campo como oculto
+
         self.fields['id_cliente'].widget = forms.HiddenInput()
         self.fields['id_servicio'].widget = forms.HiddenInput()
         self.fields['id_personal'].label = "Personal"
         self.fields['fecha'].widget = DateInput()
-
-        # No existe instancia ni su pk, entonces est
-        # if not self.instance.pk:
-        # self.fields['id_cliente'].initial = args[0]
-        # self.fields['id_servicio'].initial = args[1]
+        self.fields['fecha'].input_formats=['%d/%m/%Y']
 
     class Meta:
         model = Cita

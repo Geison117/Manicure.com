@@ -51,3 +51,12 @@ def mostrar_perfil(request):
             'form': cliente
         }
     return render(request, 'mi_perfil.html', contexto)
+
+def mostrar_citas(request):
+    if request.method == 'GET':
+        citas = Cita.objects.filter(id_cliente = request.user.id)
+        print(citas[0].id_cliente)
+        contexto = {
+            'citas': citas
+        }
+    return render(request, 'citas.html', contexto)
