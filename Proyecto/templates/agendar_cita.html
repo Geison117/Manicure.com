@@ -14,16 +14,20 @@
     <div class="container box login" style="width: 15%">
         <h3 class="my-4 border-bottom pb-1" ><font color="black">Agendar cita</font></h3>
         {% for field in form.visible_fields %}
+
         <div class="my-4 form-group">
-            {{ field.label }} <br>
+        {{ field.label }} <br>
             {{ field }}
         </div>
+
         {% endfor %}
-        <button type="submit" class="btn btn-success">Agendar cita</button>
+        <button type="submit" class="btn btn-success mt-1">Agendar cita</button>
 
     </div>
 
 
 </form>
 </div>
+
+
 {% endblock content %}
